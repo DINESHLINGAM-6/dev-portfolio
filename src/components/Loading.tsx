@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./styles/Loading.css";
 import { useLoading } from "../context/LoadingProvider";
-
 import Marquee from "react-fast-marquee";
+
 
 const Loading = ({ percent }: { percent: number }) => {
   const { setIsLoading } = useLoading();
@@ -14,7 +14,7 @@ const Loading = ({ percent }: { percent: number }) => {
     setTimeout(() => {
       setLoaded(true);
       setTimeout(() => {
-        setIsLoaded(true);
+        setIsLoaded(true);  
       }, 1000);
     }, 600);
   }
@@ -91,45 +91,21 @@ const Loading = ({ percent }: { percent: number }) => {
 };
 
 export default Loading;
+export const setProgress = (callback: (value: number) => void) => {
+  let progressValue = 0;
 
-export const setProgress = (setLoading: (value: number) => void) => {
-  let percent: number = 0;
-
-  let interval = setInterval(() => {
-    if (percent <= 50) {
-      let rand = Math.round(Math.random() * 5);
-      percent = percent + rand;
-      setLoading(percent);
-    } else {
-      clearInterval(interval);
-      interval = setInterval(() => {
-        percent = percent + Math.round(Math.random());
-        setLoading(percent);
-        if (percent > 91) {
-          clearInterval(interval);
-        }
-      }, 2000);
-    }
-  }, 100);
-
-  function clear() {
-    clearInterval(interval);
-    setLoading(100);
-  }
-
-  function loaded() {
-    return new Promise<number>((resolve) => {
-      clearInterval(interval);
-      interval = setInterval(() => {
-        if (percent < 100) {
-          percent++;
-          setLoading(percent);
-        } else {
-          resolve(percent);
-          clearInterval(interval);
-        }
-      }, 2);
-    });
-  }
-  return { loaded, percent, clear };
+  return {
+    updateProgress: (newProgress: number) => {
+      progressValue = Math.min(100, Math.max(0, newProgress)); // Ensure value stays between 0 and 100
+      callback(progressValue);
+    },
+    loaded: () =>
+      new Promise<void>((resolve) => {
+        setTimeout(() => {
+          callback(100); // Ensure progress reaches 100% before resolving
+          resolve();
+        }, 500); // Simulated delay
+      }),
+  };
 };
+
