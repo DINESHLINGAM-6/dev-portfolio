@@ -6,9 +6,11 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          Passionate mobile app developer with
+          expertise in full stack development (Node.js, SQL, Firebase) 
+          and a keen eye for UI/UX. Skilled in writing clean, 
+          scalable code and implementing CI/CD for
+          seamless deployments. Open to impactful freelance opportunities!
         </p>
       </div>
     </div>

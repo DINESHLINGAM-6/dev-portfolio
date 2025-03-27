@@ -3,7 +3,8 @@
   max-width: var(--cMaxWidth);
   width: var(--cWidth);
   justify-content: space-between;
-  padding: 20px 0px;
+  align-items: center; /* Ensure vertical alignment */
+  padding: 20px 0;
   margin-bottom: -100px;
   box-sizing: border-box;
   position: fixed;
@@ -11,9 +12,11 @@
   transform: translateX(-50%);
   top: 0;
   z-index: 9999;
+  
 }
+
 .header ul {
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -21,15 +24,21 @@
   list-style: none;
   column-gap: 40px;
   row-gap: 8px;
-  align-items: end;
+  align-items: flex-end;
 }
+
 .header ul li {
-  margin-left: 0px;
   letter-spacing: 1px;
   color: #ccc;
   font-weight: 600;
   cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
+
+.header ul li:hover {
+  color: #ffffff;
+}
+
 .navbar-connect {
   position: absolute;
   display: none;
@@ -39,45 +48,79 @@
   font-size: 15px;
   letter-spacing: 1px;
   font-weight: 500;
+  color: #ffffff;
 }
+
 .navbar-title {
   font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.2px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds space between logo and text */
+  color: var(--primaryColor, #ffffff);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
+
+.navbar-title:hover {
+  color: var(--accentColor, #ff8c00);
+}
+
+/* Logo Image */
+.logo-img {
+  width: 40px;
+  height: auto;
+  border-radius: 5px; /* Optional: Slightly rounded corners */
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
 @media only screen and (min-width: 500px) {
   .header {
-    padding: 20px 0px;
+    padding: 20px 0;
   }
+
   .header ul {
     flex-direction: row;
     align-items: center;
     font-size: 14px;
   }
+
   .header ul li {
     color: #eae5ec;
   }
+
   .navbar-title {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
+
 @media only screen and (min-width: 900px) {
   .navbar-connect {
     display: block;
   }
 }
+
 @media only screen and (min-width: 1200px) {
   .header {
-    padding: 35px 0px;
+    padding: 35px 0;
   }
+
   .header ul {
     column-gap: 80px;
     font-size: 16px;
   }
+
   .navbar-connect {
     font-size: 16px;
   }
+
   .navbar-title {
-    font-size: 18px;
+    font-size: 20px;
   }
 }

@@ -1,20 +1,22 @@
 .about-section {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   place-items: center;
   position: relative;
   opacity: 1;
   height: auto;
   width: var(--cWidth);
   margin: auto;
+  padding: 20px;
 }
+
 .about-me {
-  padding: 50px 0px;
-  padding-bottom: 0;
+  padding: 50px 15px 0 15px;
   width: 500px;
-  max-width: calc(100% - 15px);
+  max-width: calc(100% - 30px);
 }
+
 .about-me h3 {
   font-size: 25px;
   text-transform: uppercase;
@@ -22,19 +24,29 @@
   font-weight: 400;
   color: var(--accentColor);
 }
-
 .about-me p {
-  font-size: 33px;
-  font-weight: 600;
-  line-height: 36px;
-  letter-spacing: 1px;
+  font-size: 20px;
+  font-weight: 550;
+  line-height: 40px;
+  text-align: left; /* Change from justify to left for better word spacing */
+  word-spacing: 1px; /* Adjust spacing between words */
+  letter-spacing: 0.1px; /* Slight adjustment to letter spacing */
+  word-break: normal; /* Ensures words don’t break randomly */
+  overflow-wrap: break-word; /* Allows breaking at safe points */
+  hyphens: manual; /* Prevents automatic hyphenation but allows manual */
 }
 
+  /* Disables automatic hyphenation */
+
+
+
+/* Responsive Design */
 @media only screen and (min-width: 600px) {
   .about-section {
     justify-content: center;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .about-me {
     width: 500px;
@@ -45,10 +57,11 @@
     opacity: 1;
   }
 }
+
 @media only screen and (min-width: 1025px) {
   .about-section {
     width: var(--cWidth);
-    justify-content: right;
+    justify-content: flex-end;
     max-width: 1920px;
     height: var(--vh);
     padding: 0px;
@@ -59,13 +72,18 @@
     width: 50%;
   }
   .about-me p {
-    font-size: 1.9vw;
-    line-height: 2.3vw;
-  }
+    font-size: 1.91vw; /* Slightly increased for better readability */
+    line-height: 2.8vw; /* Increased to maintain good spacing */
+    word-break: keep-all; /* Prevents unnecessary word breaks */
+    hyphens: none; /* Disables automatic hyphenation */
+    white-space: normal; /* Ensures text wraps naturally */
 }
+
+}
+
 @media only screen and (min-width: 1950px) {
   .about-me p {
-    font-size: 2.5rem;
-    line-height: 2.7rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
   }
 }
