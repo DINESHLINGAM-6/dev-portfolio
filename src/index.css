@@ -94,9 +94,9 @@ body {
 .techstack {
   width: 100%;
   position: relative;
-  height: var(--vh);
+  height: 100vh;
   margin: auto;
-  margin-top: 50px;
+  padding-top: 2000px; /* Changed from margin-top */
   margin-bottom: -100px;
 }
 
@@ -105,11 +105,13 @@ body {
   text-align: center;
   position: absolute;
   width: 100%;
-  top: 120px;
+  top: 0; /* Changed from top: 100px */
   left: 0;
   font-weight: 400;
   text-transform: uppercase;
+  
 }
+
 
 @media screen and (min-width: 768px) {
   body {

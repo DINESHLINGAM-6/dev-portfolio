@@ -27,6 +27,7 @@
 .about-me p {
   font-size: 20px;
   font-weight: 550;
+  
   line-height: 40px;
   text-align: left; /* Change from justify to left for better word spacing */
   word-spacing: 1px; /* Adjust spacing between words */
@@ -36,11 +37,6 @@
   hyphens: manual; /* Prevents automatic hyphenation but allows manual */
 }
 
-  /* Disables automatic hyphenation */
-
-
-
-/* Responsive Design */
 @media only screen and (min-width: 600px) {
   .about-section {
     justify-content: center;
@@ -69,14 +65,14 @@
   }
   .about-me {
     padding: 0px;
-    width: 50%;
+    width: 40%;
   }
   .about-me p {
-    font-size: 1.91vw; /* Slightly increased for better readability */
+    font-size: 1.92vw; /* Slightly increased for better readability */
     line-height: 2.8vw; /* Increased to maintain good spacing */
-    word-break: keep-all; /* Prevents unnecessary word breaks */
+    /* Prevents unnecessary word breaks */
     hyphens: none; /* Disables automatic hyphenation */
-    white-space: normal; /* Ensures text wraps naturally */
+     /* Ensures text wraps naturally */
 }
 
 }

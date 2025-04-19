@@ -27,13 +27,16 @@ const WhatIDo = () => {
   return (
     <div className="whatIDO">
       <div className="what-box">
-        <h2 className="title">
+      <h2 className="title">
           W<span className="hat-h2">HAT</span>
           <div>
+            <br></br>
             I<span className="do-h2"> DO</span>
           </div>
         </h2>
       </div>
+
+
       <div className="what-box">
         <div className="what-box-in">
           <div className="what-border2">
@@ -90,21 +93,21 @@ const WhatIDo = () => {
               <h3>DEVELOP</h3>
               <h4>Description</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+              Full-stack developer skilled in Node.js, React, and Next.js, crafting clean, scalable solutions with a strong UI/UX focus. 
+              Passionate about turning ideas into seamless digital experiences.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
+                <div className="what-tags">C</div>
                 <div className="what-tags">JavaScript</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
                 <div className="what-tags">React</div>
                 <div className="what-tags">Css</div>
                 <div className="what-tags">Node.js</div>
                 <div className="what-tags">Next.js</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
+                <div className="what-tags">Java</div>
+                <div className="what-tags">Python</div>
                 <div className="what-tags">MySql</div>
+                <div className="what-tags">TypeScript</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -131,8 +134,8 @@ const WhatIDo = () => {
               <h3>DESIGN</h3>
               <h4>Description</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+              Design goes beyond aesthetics—it's about intuitive, meaningful experiences.
+              We blend creativity and strategy to craft purposeful, user-centered solutions.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
