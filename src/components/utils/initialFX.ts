@@ -96,9 +96,8 @@ export function initialFX() {
 }
 
 function LoopText(Text1: HTMLElement[], Text2: HTMLElement[]) {
-  var tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-  const delay = 4;
-  const delay2 = delay * 2 + 1;
+  const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+  const delay = 4; // This delay is used for the first animation
 
   tl.to(Text1, {
     opacity: 0,
