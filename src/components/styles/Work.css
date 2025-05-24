@@ -1,4 +1,4 @@
-.work-section h2 {
+/* .work-section h2 {
     margin-top: 100px;
     font-size: 70px;
     font-weight: 500;
@@ -188,7 +188,7 @@
       gap: 20px;
     }
   }
-  /* @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 900px) {
     .work-image img {
       max-height: 200px;
     }
@@ -199,7 +199,7 @@
     .work-box {
       gap: 20px;
     }
-  } */
+  } 
   @media only screen and (max-width: 1025px) {
     .work-container {
       align-content: normal;
@@ -207,5 +207,5 @@
     .work-flex {
       height: auto;
     }
-  }
+  }*/
   

@@ -95,9 +95,11 @@ body {
   width: 100%;
   position: relative;
   height: 100vh;
-  margin: auto;
-  padding-top: 2000px; /* Changed from margin-top */
-  margin-bottom: -100px;
+  margin: 200px auto; /* Proper spacing instead of excessive padding */
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .techstack h2 {

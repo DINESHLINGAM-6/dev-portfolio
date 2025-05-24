@@ -193,11 +193,16 @@
   top: 0;
   color: var(--backgroundColor);
 }
-.loader-title {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.2px;
+
+
+.loader-title img {
+  height: 50px; /* Adjust size as needed */
+  width: auto;
+  object-fit: contain;
 }
+
+
+
 @keyframes blink {
   0% {
     opacity: 0;

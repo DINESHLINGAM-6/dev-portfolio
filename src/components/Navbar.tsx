@@ -1,24 +1,31 @@
 import { useEffect } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import HoverLinks from "./HoverLinks";
 
 import "./styles/Navbar.css";
 
-gsap.registerPlugin(ScrollTrigger);
+// Register plugins
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Navbar = () => {
   useEffect(() => {
-    let links = document.querySelectorAll(".header ul a");
+    const links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
+      const element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
-        if (window.innerWidth > 1024) {
-          e.preventDefault();
-          let section = element.getAttribute("data-href");
-          if (section) {
-            gsap.to(window, { duration: 1, scrollTo: section });
-          }
+        e.preventDefault(); // prevent default anchor jump
+        const section = element.getAttribute("data-href");
+        if (section && document.querySelector(section)) {
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: {
+              y: section,
+              offsetY: 80, // Adjust for fixed header height
+            },
+            ease: "power2.inOut",
+          });
         }
       });
     });
@@ -32,7 +39,7 @@ const Navbar = () => {
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-        <img src="\images\logo1.jpg" alt="Logo" className="logo-img" />
+          <img src="/images/logo1.jpg" alt="Logo" className="logo-img" />
         </a>
         <a
           href="mailto:lohithyeluri36@gmail.com"
@@ -49,7 +56,7 @@ const Navbar = () => {
           </li>
           <li>
             <a data-href="#work" href="#work">
-              <HoverLinks text="WORK" />
+              <HoverLinks text="TECHSTACK" />
             </a>
           </li>
           <li>
